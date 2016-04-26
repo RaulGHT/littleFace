@@ -1,3 +1,4 @@
+script
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
@@ -21,11 +22,12 @@
 				<% else %>
 					<li class="navbar-tab"><a href="/page/timeline"><i class="glyphicon glyphicon-time" style="font-size: 1.1em; margin-right:10px; color:grey;"></i>Timeline</a></li>
 				<% end %>
-				<li class="dropdown">
+				<li class="dropdown" ng-controller="notificationsCtrl">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-bullhorn" style="font-size: 1.1em; margin-right:10px; color:grey;"></i>Notifications<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Notification</a></li>
-						<li><a href="#">Another Notification</a></li>
+						<div ng-repeat="notif in notifs">
+						<li><a href="#">{{notif.id}} - {{notif.message}}</a></li>
+						</div>
 						<li role="separator" class="divider"></li>
 						<li class="dropdown-header">Nav header</li>
 						<li><a href="#">Something else here</a></li>
