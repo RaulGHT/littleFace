@@ -3,13 +3,24 @@
 	<head>
 		<title>LittleFace</title>
 		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.0/angular-scroll.min.js"></script>
+		<%= cloudinary_js_config %>
 		<%= csrf_meta_tags %>
 	</head>
-	<body>
+	<body ng-app="ngCli" style="overflow-x: hidden;">
 		<%= yield %>
 	</body>
-	<%= render "layouts/modal_post" %>
-	<%= javascript_include_tag 'cloudinary', 'data-turbolinks-track' => true %>
-	<%= cloudinary_js_config %>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<script>
+		// SideBar Actions
+		$("#bar-toggle").click(function(e) {
+		    e.preventDefault();
+		    $("#wrapper").toggleClass("toggled");
+		    $("#bar-ico").toggleClass("rotate180");
+		});
+		// Scrollbar fix (You can't scroll in modal when closing an second modal)
+		$(document).on('hidden.bs.modal', '.modal', function () {
+		    $('.modal:visible').length && $(document.body).addClass('modal-open');
+		});
+	</script>
 </html>

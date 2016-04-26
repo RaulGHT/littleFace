@@ -22,12 +22,12 @@
 
 @media only screen and (max-width: 480px) {
     table {
-        font-size: 90%;
+      font-size: 90%;
     }
     #main_panel {
-    width: 100% !important;
-    padding-right: 5px;
-    padding-left: 5px;
+      width: 100% !important;
+      padding-right: 5px;
+      padding-left: 5px;
   }
 }
 
@@ -46,21 +46,27 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
   
-  font-family: 'Georgia', serif;
-    font-size: 16px;
-    padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  padding: 0;
 }
+/*
 #footer {
   position: fixed;
   bottom: 0;
   margin: 0px;
   width: 100%;
-  /* Set the fixed height of the footer here */
+  // Set the fixed height of the footer here
   background-color: #f5f5f5;
 }
+*/
 
 /* Custom page CSS
 -------------------------------------------------- */
+.rightText {
+    text-align: right;
+}
+
 .main_panel {
   margin-top: 60px;
   max-width: 600px;
@@ -142,7 +148,7 @@ body {
 /* .modal-fullscreen
 -------------------------------------------------- */
 .modal-fullscreen .modal-dialog {
-  margin: 0;
+/*  margin: 0;  */
   margin-right: auto;
   margin-left: auto;
   width: 100%;

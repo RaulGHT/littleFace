@@ -2,10 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
 
   get 'page/home' => 'page#home'
+  get 'page/timeline' => 'page#timeline'
   
-  get 'posts/interval' => 'posts#interval'
-  get 'posts/range' => 'posts#range'
-  resources :posts
+  get 'post/recent' => 'post#recent'
+  get 'post/range' => 'post#range'
+  put 'post/:id/like' => 'post#like'
+  get 'user' => 'user#current'
+  get 'timeline' => 'timeline#index'
+  resources :post
+  resources :notif
   
   root 'page#home'
 
